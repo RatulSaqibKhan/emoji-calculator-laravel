@@ -1,4 +1,8 @@
 /* Customized CSS */
+.flex-col {
+  flex-direction: column;
+}
+
 .font-big {
     font-size: 35px;
 }
@@ -83,7 +87,7 @@ select.form-control {
     background-color: #e9ecef;
     opacity: 1;
 }
-.form-control[type="number"] {
+.text-right {
     text-align: right;
 }
 
@@ -121,6 +125,10 @@ select.form-control {
   padding: 1rem;
 }
 
-.text-danger {
-  color: red;
+.error {
+    border: 1px solid red;
+}
+
+.error:focus {
+  border-color: red;
 }

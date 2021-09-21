@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
 
   <title>	&#128522; Emoji Calculator</title>
 
@@ -29,11 +30,10 @@
         <div class="grid grid-cols-1">
           <div class="p-6">
             <div class="flex items-center">
-              <form id="calculatorForm" method="POST" autocomplete="off">
+              <form action="{{ url('/calculate') }}" id="calculatorForm" method="POST" autocomplete="off">
                 <div class="grid grid-cols-5 xs:grid-cols-3 gap-2">
-                  <div class="form-group flex justify-center">
-                    <input type="number" name="input1" class="form-control" placeholder="Type a Number">
-                    <span class="text-danger"></span>
+                  <div class="form-group flex flex-col justify-center">
+                    <input type="text" name="input1" class="form-control text-right" placeholder="Type a Number">
                   </div>
                   <div class="form-group flex justify-center">
                     <select name="operand" class="form-control">
@@ -43,15 +43,14 @@
                       <option value="division">&#128561;</option>
                     </select>
                   </div>
-                  <div class="form-group flex justify-center">
-                    <input type="text" name="input2" class="form-control" placeholder="Type a Number">
-                    <span class="text-danger"></span>
+                  <div class="form-group flex flex-col justify-center">
+                    <input type="text" name="input2" class="form-control text-right" placeholder="Type a Number">
                   </div>
                   <div class="form-group flex justify-center">
                     <button class="btn form-control">&#61;</button>
                   </div>
                   <div class="form-group flex justify-center">
-                    <input type="text" name="result" class="form-control" readonly="readonly" placeholder="Result">
+                    <input type="text" name="result" class="form-control text-right" readonly="readonly" placeholder="Result">
                   </div>
                 </div>
               </form>
@@ -72,7 +71,7 @@
                     <br>
                     &#128561; Division
                     <br>
-                    <i class="uil uil-github-alt"></i> github link: <a href="https://github.com/RatulSaqibKhan/emoji-calculator-laravel">https://github.com/RatulSaqibKhan/emoji-calculator-laravel</a>
+                    <i class="uil uil-github-alt"></i> Fork in github: <a href="https://github.com/RatulSaqibKhan/emoji-calculator-laravel">https://github.com/RatulSaqibKhan/emoji-calculator-laravel</a>
                   </code>
               </div>
           </div>
@@ -98,6 +97,9 @@
       </div>
     </div>
   </div>
+
+  <script src="{{ asset('js/jquery-3.6.min.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>
