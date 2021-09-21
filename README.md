@@ -14,7 +14,7 @@
 - Open terminal/ command prompt and cd to the application root
 - Run `composer install`
 - Run `php artisan serve`
-- The application should be served in 127.0.0.1:8000 according to your pc's port availabilty
+- The application should be served in `127.0.0.1:8000` according to your pc's port availabilty
 
 ## Application Screenshot
 
