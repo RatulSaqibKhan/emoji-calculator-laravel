@@ -71,7 +71,7 @@
                     <br>
                     &#128561; Division
                     <br>
-                    <i class="uil uil-github-alt"></i> Fork in github: <a href="https://github.com/RatulSaqibKhan/emoji-calculator-laravel">https://github.com/RatulSaqibKhan/emoji-calculator-laravel</a>
+                    <i class="uil uil-github-alt"></i> Fork in github: <a target="_blank" href="https://github.com/RatulSaqibKhan/emoji-calculator-laravel">https://github.com/RatulSaqibKhan/emoji-calculator-laravel</a>
                   </code>
               </div>
           </div>

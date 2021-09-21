@@ -8,8 +8,8 @@
 - &#128561; Division
 
 ## Install Application using following steps
-- Required PHP version 7.3 or above 
-- Required Composer 
+- Required [PHP](https://www.php.net/downloads.php) version 7.3 or above 
+- Required [Composer](https://getcomposer.org/) 
 - Clone or download the application to your pc/ laptop
 - Open terminal/ command prompt and cd to the application root
 - Run `composer install`
