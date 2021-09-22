@@ -41,7 +41,6 @@
   - Run `composer install`
   - Run `cp .env.example .env`
   - Run `php artisan key:generate`
-  - Run `php artisan serve`
   - The application should be served in `localhost:8080` according to your pc's port availabilty
   
 ## Application Screenshot
