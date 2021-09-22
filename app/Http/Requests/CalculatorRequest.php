@@ -24,9 +24,9 @@ class CalculatorRequest extends FormRequest
     public function rules()
     {
         return [
-            'input1' => 'required',
-            'operand' => 'required',
-            'input2' => 'required',
+            'input1' => 'required|numeric',
+            'operand' => 'required|string',
+            'input2' => 'required|numeric',
         ];
     }
 }
