@@ -37,6 +37,6 @@ class CalculateResultAction
 
     private function division($input1, $input2)
     {
-        return round($input1 / $input2, 5);
+        return $input2 != 0 ? round($input1 / $input2, 5) : 'Division by Zero';
     }
 }
