@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: Saqib
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: emoji-calculator
+    container_name: emoji-calculator-application
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - emoji-calculator-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: emoji-calculator-nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx:/etc/nginx/conf.d/
+    networks:
+      - emoji-calculator-network
+
+networks:
+  emoji-calculator-network:
+    driver: bridge
