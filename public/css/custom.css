@@ -132,3 +132,7 @@ select.form-control {
 .error:focus {
   border-color: red;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\OperandRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CalculatorRequest extends FormRequest
@@ -25,7 +26,7 @@ class CalculatorRequest extends FormRequest
     {
         return [
             'input1' => 'required|numeric',
-            'operand' => 'required|string',
+            'operand' => ['required', 'string', new OperandRule],
             'input2' => 'required|numeric',
         ];
     }
