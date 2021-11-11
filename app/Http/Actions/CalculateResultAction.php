@@ -2,6 +2,8 @@
 
 namespace App\Http\Actions;
 
+use App\Calculator\Facades\CalculatorFacade;
+
 class CalculateResultAction
 {
     protected $request;
@@ -23,54 +25,9 @@ class CalculateResultAction
      */
     public function action()
     {
-        $number1 = $this->request->input1;
-        $number2 = $this->request->input2;
         $operand = $this->request->operand; // addition, subtraction, multiplication, division
-
-        return $this->{$operand}($number1, $number2);
+        $calculator = new CalculatorFacade($this->request->input1, $this->request->input2);
+        return $calculator->{$operand}();
     }
 
-    /**
-     * Calculate addition of two numbers
-     * @param $number1
-     * @param $number2
-     * @return float
-     */
-    private function addition($number1, $number2) : float
-    {
-        return (float)($number1 + $number2);
-    }
-
-    /**
-     * Calculate subtraction of two numbers
-     * @param $number1
-     * @param $number2
-     * @return float
-     */
-    private function subtraction($number1, $number2) : float
-    {
-        return (float)($number1 - $number2);
-    }
-
-     /**
-     * Calculate multiplication of two numbers
-     * @param $number1
-     * @param $number2
-     * @return float
-     */
-    private function multiplication($number1, $number2) : float
-    {
-        return (float)($number1 * $number2);
-    }
-
-    /**
-     * Calculate division of two numbers
-     * @param $number1
-     * @param $number2
-     * @return mixed
-     */
-    private function division($number1, $number2)
-    {
-        return $number2 != 0 ? round($number1 / $number2, 5) : 'Division by Zero';
-    }
 }

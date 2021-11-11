@@ -6,6 +6,7 @@ use App\Http\Actions\CalculateResultAction;
 use App\Http\Requests\CalculatorRequest;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class CalculatorController extends Controller
 {
@@ -29,12 +30,12 @@ class CalculatorController extends Controller
     {
         try {
             $result = (new CalculateResultAction($request))->action();
-            $status = 200;
+            $status = Response::HTTP_OK;
             $error = null;
             $message = 'Success!';
         } catch (Exception $e) {
             $result = null;
-            $status = 500;
+            $status = Response::HTTP_INTERNAL_SERVER_ERROR;
             $error = $e->getMessage;
             $message = 'Something went wrong!';
         }
